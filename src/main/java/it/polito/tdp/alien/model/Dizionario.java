@@ -12,6 +12,12 @@ public class Dizionario {
 	}
 	
 	public void addTraduzione(String alieno, String italiano) {
+		for(Traduzione t: this.dizionario) {
+			if(t.getAlieno().toLowerCase().equals(alieno.toLowerCase()) 
+					&& t.getItaliano().toLowerCase().equals(italiano.toLowerCase())) {
+				return;
+			}
+		}
 		Traduzione tempT = new Traduzione(alieno, italiano);
 		this.dizionario.add(tempT);
 	}
